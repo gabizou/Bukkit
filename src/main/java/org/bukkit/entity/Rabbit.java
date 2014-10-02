@@ -1,5 +1,8 @@
 package org.bukkit.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Represents a Rabbit.
  */
@@ -33,14 +36,14 @@ public interface Rabbit extends Animals
         SALT_PEPPER(5),
         KILLER(99);
 
-        private static final RabbitType[] types = new RabbitType[RabbitType.values().length];
+        private static final Map<Integer, RabbitType> types = new HashMap<Integer, RabbitType>(values().length);
         private final int id;
 
         static
         {
             for (RabbitType type : values())
             {
-                types[type.getId()] = type;
+                types.put(type.id, type);
             }
         }
 
@@ -71,7 +74,7 @@ public interface Rabbit extends Animals
         @Deprecated
         public static RabbitType getType(int id)
         {
-            return (id >= types.length) ? null : types[id];
+            return types.containsKey(id) ? null : types.get(id);
         }
     }
 }
