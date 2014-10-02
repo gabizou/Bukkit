@@ -74,7 +74,7 @@ public interface Rabbit extends Animals
         @Deprecated
         public static RabbitType getType(int id)
         {
-            return types.containsKey(id) ? null : types.get(id);
+            return types.get(id);
         }
     }
 }
