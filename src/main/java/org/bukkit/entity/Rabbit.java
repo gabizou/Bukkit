@@ -6,8 +6,7 @@ import java.util.Map;
 /**
  * Represents a Rabbit.
  */
-public interface Rabbit extends Animals
-{
+public interface Rabbit extends Animals {
 
     /**
      * Gets the type of rabbit.
@@ -26,8 +25,7 @@ public interface Rabbit extends Animals
     /*
     * Represents the various different Rabbit types.
     */
-    public enum RabbitType
-    {
+    public enum RabbitType {
         BROWN,
         WHITE,
         BLACK,
